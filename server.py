@@ -26,11 +26,11 @@ serverSocket.listen(5)
 def threaded_client(connection):
 
     connection.send(str.encode(" Welcome to the Server \n"))  
-    
-    
+
+
     terima = connection.recv(2048)
     if not terima:
-                print ("No message")
+                print ("No message")  #print
     else:
                 msg = terima.decode()
                 print ("Client message: ", msg)
