@@ -25,7 +25,7 @@ serverSocket.listen(5)
 
 def threaded_client(connection):
 
-    connection.send(str.encode(" Welcome to the Server \n"))  
+    connection.send(str.encode('Welcome to the Server'))
 
 
     terima = connection.recv(2048)
@@ -34,8 +34,8 @@ def threaded_client(connection):
     else:
                 msg = terima.decode()
                 print ("Client message: ", msg)
-                chat = input("Mesej Server: " ) #send chat to client 
-                reply = 'Server Says: ' + chat 
+                chat = input("Message to Client: " ) #send chat to client
+                reply = 'Server message: ' + chat
                 connection.sendall(str.encode(reply))
 
     connection.close()
